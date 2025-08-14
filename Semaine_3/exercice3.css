@@ -1,0 +1,25 @@
+body {
+    background-color: lightblue; 
+    font-family: Arial, sans-serif;
+}
+
+
+#para-bold {
+    font-weight: bold;
+}
+
+.para-italique {
+    font-style: italic;
+}
+
+.item-highlight {
+    color: rgb(64, 64, 221);
+}
+
+[class^="a"] {
+    background-color: yellow;
+}
+
+[class$="date"] {
+    background-color: rgb(51, 212, 51);
+}
