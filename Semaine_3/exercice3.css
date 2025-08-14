@@ -30,7 +30,6 @@ body {display: flex;
 footer {
     background: #f5c5c5;
     text-align: center;
+    padding: 2px;
         }
-        html, body {
-            height: 100%;
-        }
+    
