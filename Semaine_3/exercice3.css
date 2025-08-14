@@ -23,3 +23,14 @@ body {
 [class$="date"] {
     background-color: rgb(51, 212, 51);
 }
+ 
+body {display: flex;
+    flex-direction: column;
+        }
+footer {
+    background: #f5c5c5;
+    text-align: center;
+        }
+        html, body {
+            height: 100%;
+        }
