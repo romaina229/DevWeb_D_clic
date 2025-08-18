@@ -1,4 +1,4 @@
-  // 1. Nombres premiers entre 1 et 100
+  // 1. Nombres premiers entre 1 à 100
     function nombresPremiers() {
       let premiers = [];
       for (let n = 2; n <= 100; n++) {
