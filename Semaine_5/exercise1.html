@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1...</title>
+    <style>
+        h1 {
+            color: rgb(40, 20, 73);
+            text-align: center;
+            font-size: 24px;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            text-decoration-line: none;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #494545;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            border: 2px solid #ccc;
+            padding: 15px;
+            background-color: #b9e7f5c0;
+            width: fit-content;
+            font-style: italic;
+            font: fallback;
+        }
+        input {
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            width: 300px;
+            margin-bottom: 20px;
+            display: flexbox;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manipulation de chaînes de caractères (String)</h1>
+    <input type="text" id="chaine" onclick="manipulerChaine()" placeholder="Entrez une chaîne de caractères">
+    <p id="resultat"></p>
+    
+
+    <script>
+        function manipulerChaine() {
+            const input = document.getElementById("chaine").value;
+            const resultat = document.getElementById("resultat");
+
+            // Exemple de manipulation de chaîne
+            resultat.innerHTML = `
+                Longueur de la chaîne : ${input.length} <br>
+                Les trois premières lettres : ${input.charAt(0)}${input.charAt(1)}${input.charAt(2)}
+            `;
+        }
+    </script>
+</body>
+</html>

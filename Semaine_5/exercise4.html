@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 5...</title>
+    <style>
+         h1 {
+            color: rgb(40, 20, 73);
+            text-align: center;
+            font-size: 24px;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            text-decoration-line: none;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+         input {
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            width: 300px;
+            margin-bottom: 20px;
+            display: flexbox;
+            color: red;
+        }
+        button {
+            margin-top: 12px;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a0e776;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manipulation de tableaux (Array)</h1>
+    <table id="tableauHTML">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Valeur</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les lignes seront générées dynamiquement -->
+        </tbody>
+    </table>
+    <br>
+    
+    Vuillez inserer la valeur de l'index à supprimer: <input type="number" id="indexSupp" placeholder="Ici">
+    <button onclick="supprimerElement()">Supprimer l'élément</button>
+    <button onclick="trierEtAfficher()">Trier et afficher</button>
+    <br><br>
+    Veuillez ajouter une valeur à la fin du tableau : <input type="number" id="valAjout" placeholder="Nouvelle valeur">
+    <button onclick="ajouterElement()">Ajouter</button>
+
+    <script>
+        // 1. Créez un tableau avec quelques nombres
+        let tableau = [12, 5, 8, 21, 3, 17];
+
+        // 2. Script pour ajouter un nouvel élément à la fin du tableau
+        function ajouterElement() {
+            const val = parseInt(document.getElementById("valAjout").value);
+            if (!isNaN(val)) {
+                tableau.push(val);
+                afficherTableau();
+                document.getElementById("valAjout").value = "";
+            } else {
+                alert("Veuillez entrer une valeur valide.");
+            }
+        }
+
+        // 3. Script pour supprimer un élément spécifique du tableau (par index)
+        function supprimerElement() {
+            const index = parseInt(document.getElementById("indexSupp").value);
+            if (!isNaN(index) && index >= 0 && index < tableau.length) {
+                tableau.splice(index, 1);
+                afficherTableau();
+            } else {
+                alert("Index invalide");
+            }
+        }
+
+        // 4. Script pour trier le tableau de nombres dans l'ordre croissant et l'afficher
+        function trierEtAfficher() {
+            tableau.sort((a, b) => a - b);
+            afficherTableau();
+        }
+
+        // Fonction pour afficher le tableau dans le HTML
+        function afficherTableau() {
+            const tbody = document.querySelector("#tableauHTML tbody");
+            tbody.innerHTML = "";
+            tableau.forEach((valeur, index) => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `<td>${index}</td><td>${valeur}</td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Affichage initial
+        afficherTableau();
+    </script>
+</body>
+</html>

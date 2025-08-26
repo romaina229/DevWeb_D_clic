@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 3...</title>
+    <style>
+        h1 {
+            color: rgb(40, 20, 73);
+            text-align: center;
+            font-size: 24px;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            text-decoration-line: none;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #494545;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            border: 2px solid #ccc;
+            padding: 15px;
+            background-color: #b9e7f5c0;
+            width: fit-content;
+            font-style: italic;
+            font: fallback;
+        }
+        input {
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            width: 300px;
+            margin-bottom: 20px;
+            display: flexbox;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            background-color: #6acbe9c0;
+            cursor: pointer;
+            color: #ff0303;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manipulation de dates (Date)</h1>
+    <input type="date" id="dateInput" placeholder="Entrez une date">
+        <button onclick="manipulerDate()">Affichez la date</button>
+        <p id="resultatDate"></p>
+        <p id="jour"></p>
+        <p id="mois"></p>
+        <p id="annee"></p>
+        <p id="diff"></p>
+
+    <script>
+        function manipulerDate() {
+            const dateInput = document.getElementById("dateInput").value;
+            const resultatDate = document.getElementById("resultatDate");
+            const jourP = document.getElementById("jour");
+            const moisP = document.getElementById("mois");
+            const anneeP = document.getElementById("annee");
+            const diffP = document.getElementById("diff");
+
+            const date = new Date(dateInput);
+            const jour = date.getDate();
+            const mois = date.getMonth() + 1; // Les mois commencent à 0
+            const annee = date.getFullYear();
+
+            resultatDate.innerHTML = `Date saisie : ${dateInput}`;
+            jourP.innerHTML = `Jour : ${jour}`;
+            moisP.innerHTML = `Mois : ${mois}`;
+            anneeP.innerHTML = `Année : ${annee}`;
+
+            // Calcul de la différence en jours
+            const aujourdHui = new Date();
+            // Remettre à minuit pour éviter les problèmes d'heure
+            aujourdHui.setHours(0,0,0,0);
+            date.setHours(0,0,0,0);
+            const diffTime = aujourdHui - date;
+            const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+            diffP.innerHTML = `Différence en jours avec aujourd'hui : ${diffDays}`;
+        }
+    </script>
+</body>
+</html>

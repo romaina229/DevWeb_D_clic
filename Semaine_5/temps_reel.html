@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 4...</title>
+    <style>
+        h1 {
+            color: rgb(40, 20, 73);
+            text-align: center;
+            font-size: 24px;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            text-decoration-line: none;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 2px solid #b6e648c4;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            background-color: #000000c0;
+            font-style: italic;
+            text-align: center;
+            color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <h1>Horloge en temps réel (Date)</h1>
+    <input type="text" id="horlogeInput" placeholder="Horloge en temps réel" disabled>
+    <script>
+        function mettreAJourHorloge() {
+            const maintenant = new Date();
+            const heures = String(maintenant.getHours()).padStart(2, '0');
+            const minutes = String(maintenant.getMinutes()).padStart(2, '0');
+            const secondes = String(maintenant.getSeconds()).padStart(2, '0');
+            document.getElementById("horlogeInput").value = `Heure actuelle en temps réel GMT+1 : ${heures}:${minutes}:${secondes}`;
+        }
+        setTimeout(mettreAJourHorloge, 1000);
+    </script>
+</body>
+</html>

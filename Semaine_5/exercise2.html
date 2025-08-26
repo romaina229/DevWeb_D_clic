@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2...</title>
+    <style>
+        h1 {
+            color: rgb(40, 20, 73);
+            text-align: center;
+            font-size: 24px;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            text-decoration-line: none;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #494545;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            border: 2px solid #ccc;
+            padding: 15px;
+            background-color: #b9e7f5c0;
+            width: fit-content;
+            font-style: italic;
+            font: fallback;
+        }
+        input {
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            width: 300px;
+            margin-bottom: 20px;
+            display: flexbox;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            background-color: #6acbe9c0;
+            cursor: pointer;
+            color: #ff0303;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manipulation de nombres (Math)</h1>
+    <input type="number" id="nombre" onclick="manipulerNombre()" placeholder="Entrez un nombre">
+    <p id="resultat"></p>
+<!-- Bouton pour générer un nombre aléatoire -->
+    Vuillez généré un nombre aléatoire : <button onclick="genererNombreAleatoire(1, 100)">ici</button>
+    <p id="Aleatoire"></p>
+    <!--bouton pour générer un nombre aléatoire entre un min et un max-->
+    Vuillez généré un nombre aléatoire entre un min et un max (50 et 100): <button onclick="genererNombreAleatoire2(50, 100)">ici</button>
+    <p id="Aleatoire2"></p>
+    <script>
+        function manipulerNombre() {
+            const input = document.getElementById("nombre").value;
+            const resultat = document.getElementById("resultat");
+
+            // Exemple de manipulation de nombre
+            resultat.innerHTML = `
+                Racine carrée de ${input} : ${Math.sqrt(input)} <br>
+                arrondi à la décimale la plus proche : ${Math.ceil(input)}
+            `;
+        }
+        // Générer un nombre aléatoire entre 1 et 100
+        function genererNombreAleatoire() {
+            const aleatoire = document.getElementById("Aleatoire");
+            const nombreAleatoire = Math.floor(Math.random() * 100) + 1;
+            aleatoire.innerHTML = `Nombre aléatoire généré : ${nombreAleatoire}`;
+        }
+        // Générer un nombre aléatoire alletoiire acceptant deux parametre min et max entre 50 et 100
+        function genererNombreAleatoire2(min, max) {
+            const aleatoire = document.getElementById("Aleatoire2");
+            const nombreAleatoire = Math.random() * (max - min) + min;
+            aleatoire.innerHTML = `Nombre aléatoire généré entre un min et un max: ${nombreAleatoire}`;
+        }
+    </script>
+</body>
+</html>
