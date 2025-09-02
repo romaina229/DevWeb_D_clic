@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Projet DOM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .illustration {
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .icons {
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .icon {
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: teal;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+      background: darkcyan;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mini-Projet DOM Interactif</h1>
+
+  <!-- Illustration -->
+  <img src="../assets/images/fille_garçon.png" alt="Deux personnes devant un écran" class="illustration">
+
+  <!-- Icônes -->
+  <div class="icons">
+    <div class="icon" id="css">CSS</div>
+    <div class="icon" id="html">HTML</div>
+    <div class="icon" id="php">PHP</div>
+  </div>
+
+  <!-- Zone d'affichage des messages -->
+  <p id="message">Clique sur une icône pour voir l'effet </p>
+
+  <script>
+    // Récupération des éléments
+    const cssBtn = document.getElementById("css");
+    const htmlBtn = document.getElementById("html");
+    const phpBtn = document.getElementById("php");
+    const message = document.getElementById("message");
+
+    // Ajout des événements
+    cssBtn.addEventListener("click", () => {
+      message.textContent = "CSS : C’est le style et la beauté du web !";
+      message.style.color = "teal";
+    });
+
+    htmlBtn.addEventListener("click", () => {
+      message.textContent = "HTML : C’est la structure de la page !";
+      message.style.color = "darkorange";
+    });
+
+    phpBtn.addEventListener("click", () => {
+      message.textContent = "PHP : C’est la logique et le back-end !";
+      message.style.color = "purple";
+    });
+  </script>
+
+</body>
+</html>

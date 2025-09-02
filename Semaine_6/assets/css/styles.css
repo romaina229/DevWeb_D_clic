@@ -1,0 +1,543 @@
+/* Centrage du menu de navigation */
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 20px 0 0 0;
+}
+
+/*je suis en train modifier la disposition du menu*/
+.container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 14px 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between; /*espacement entre le titre et le menu*/
+    gap: 150px;
+    align-items: center;
+    text-shadow: none;
+
+}
+
+/* Aligner le h3 à gauche */
+header h1 {
+    white-space: nowrap; /*empâcher le retour à la ligne de h1*/
+    text-align: left;
+    margin: 0 0 20px;
+    padding-left: 0 0 15px 20px;
+    font-size: 2.2em; /*taille des texte dans la nav*/
+    font-weight: 500;
+    color: #fff;
+    font-family: 'Montserrat', Verdana, sans-serif;
+}
+
+/* styles pour la navigation */
+nav {
+    background: #2c3e50;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+/* Centrer le menu dans le header */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /*active flexbox*/
+    gap: 18px;
+    padding: 10px 10px 15px;
+    margin: 2px auto;
+    width: fit-content;   /* le menu occupe seulement la largeur des liens */
+    justify-content: space-between; /* les liens sont centrés */ /*j'ai touché center pour voir la disposition*/
+    flex-wrap: nowrap; /*éviter de passer à la ligne*/
+    overflow-x: auto; /* si le texte est trop long defil horizontalement*/
+}
+
+/* centrer le bloc des liens dans la largeur */
+.nav-links {
+    text-align: right;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    justify-content: center;
+    align-items: self-end;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 450px;
+    font-size: 1.1em;
+    transition: color 0.2s;
+    margin: 0 1.5px; /*space entre le éléments de  nav li*/
+    white-space: nowrap; /*éviter que le texte d'un aille à la ligne*/
+}
+
+nav ul li a:hover {
+    color: #87f6fa;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 12px 0 0 0;
+    }
+}
+
+/* styles pour le contenu principal */
+main {
+    padding: 32px 0;
+}
+
+/* styles pour les sections */
+section {
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    padding: 24px;
+}
+
+/* styles pour les titres sous-titres dans les sections*/
+h1, h2, h3 {
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* styles pour l'accueil */
+#accueil {
+    display: flex;                /* Mise en flexbox */
+    align-items: center;          /* Aligne verticalement */
+    justify-content: center;      /* Centre horizontalement le tout */
+    gap: 220px;                    /* Espace entre image et texte */
+    padding: 60px 20px 40px 20px;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    text-align: left;             /* Texte aligné à gauche */
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.accueil-text {
+    max-width: 600px;             /* Limite la largeur du texte */
+}
+
+.accueil-img img {
+    max-width: 350px;             /* Taille de l’image ajustable */
+    height: auto;
+    display: block;
+    border-radius: 1px;          /* Optionnel : arrondir un peu */
+    transform: rotate(-5deg);   /* Légère rotation */
+    transition: transform 0.3s ease;  /* Animation douce */
+}
+#accueil h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.btnss { 
+    display: inline-block; 
+    background: #8cb1f5; 
+    color: #fff !important; 
+    padding: 8px 22px; 
+    border-radius: 5px; 
+    text-decoration: none !important; 
+    font-weight: 600; 
+    box-shadow: 0 2px 8px rgba(79,140,255,0.12); 
+    transition: background 0.2s; 
+    margin-top: 8px; 
+} 
+
+.btnss:hover {
+     background: #7894cf; 
+     color: #fff;
+}
+
+a.btnss {
+    font-size: 14px; 
+    padding: 6px 12px; 
+}
+
+#projets-accueil {
+    text-align: center;
+    margin: 16px 0;
+}
+
+/*style pour le boutton voir, et télécharger cv*/
+.btn {
+    display: inline-block;
+    background: #8cb1f5;
+    color: #fff !important;
+    padding: 8px 22px;
+    border-radius: 5px;
+    text-decoration: none !important;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(79,140,255,0.12);
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+
+.btn:hover {
+    background: #7894cf;
+    color: #fff;
+}
+
+a.btn {
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+/*le style de à propos qui est about dans la section*/
+#about {
+    background-color: #f3f1f1ec;
+    position: relative;
+    border-left: 2px solid #8cd1f8;
+    border-right: 2px solid #8cd1f8;
+    border-bottom: 2px solid #8cd1f8;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 2px 12px rgba(140,209,248,0.10);
+    padding: 24px;
+}
+
+#about h2 {
+    text-align: center;
+    color: rgb(140, 209, 248);
+    margin-top: 0;
+    margin-bottom: 30px; /* espace sous le titre */
+    font-size: 1.5em;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.about-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 32px 0;
+}
+.about-text {
+    flex: 1 1 340px;
+    text-align: left;
+}
+.about-img {
+    flex: 0 0 220px;
+    display: flex;
+    justify-content: flex-end;    
+    padding-right: 60px;
+}
+.profile-circle {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #8cd1f8;
+    box-shadow: 0 2px 16px rgba(140,209,248,0.15);
+    background: #f3f3f3;
+}
+@media (max-width: 800px) {
+    .about-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .about-img {
+        justify-content: center;
+    }
+}
+
+/* styles pour l'objectif*/
+#objectif {
+    position: relative;
+    border-left: 2px solid #8cd1f8;
+    border-right: 2px solid #8cd1f8;
+    border-top: 2px solid #8cd1f8;
+    border-bottom: 2px solid #8cd1f8;
+    border-radius: 18px 18px 18px 18px;
+    box-shadow: 0 2px 12px rgba(140,209,248,0.10);
+    padding: 24px;
+}
+
+#objectif h2 {
+    text-align: center;
+    color: rgb(140, 209, 248);
+    margin-top: 0;
+    margin-bottom: 30px; /* espace sous le titre */
+    font-size: 1.5em;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Styles pour les compétences */
+#skills {
+    background: #f3f1f1ec; /* beige clair */
+    padding: 38px 0 38px 0;
+    border-radius: 0 0 18px 18px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+#skills h2 {
+    text-align: center;
+    margin-bottom: 65px;
+    font-size: 1.5em;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Harmonisation des blocs skills-right et skills-left */
+.skills-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 0 70px;
+    margin: 80px 0;
+}
+
+.skills-right, .skills-left {
+    flex: 1 1 0;
+    background: #fff;
+    border-radius: 7px;
+    padding: 18px 22px;
+    box-shadow: 0 2px 12px rgba(140,209,248,0.08);
+    min-width: 180px;
+    min-height: 300px; /* même hauteur pour les deux blocs */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Supprime les marges verticales inutiles */
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.skills-right p, .skills-left p {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.skills-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px; /* espace réduit entre les barres de progression */
+}
+.skill-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 1.08em;
+    font-weight: 500;
+    box-shadow: 0 1px 6px rgba(140,209,248,0.07);
+    margin-bottom: 0; /* retire l'espace supplémentaire */
+    position: relative;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 7px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 0; /* espace réduit sous la barre */
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #8cd1f8 60%, #0078ff 100%);
+    transition: width 0.6s;
+}
+@media (max-width: 900px) {
+    .skills-flex {
+        flex-direction: column;
+        gap: 24px;
+        align-items: stretch;
+    }
+}
+
+body {
+    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    background: #f4f6fa;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+/* pour les projets */
+.project-list {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+}
+.project {
+    background: #f4f6fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    padding: 16px;
+    width: 220px;
+    text-align: center;
+}
+.project img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 700px) {
+    .container {
+        max-width: 100%;
+        padding: 0 8px;
+    }
+    .project-list {
+        flex-direction: column;
+        gap: 22px;
+    }
+    .project {
+        width: 100%;
+    }
+}
+
+/* Section contact personnalisée formulaire*/
+.formule {
+    background: #181a1b;
+    padding: 38px 0 38px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+    width: 100%;
+}
+#contact-form {
+    color:#f4f6fa;
+    border-radius: 18px;
+    padding: 38px;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+}
+.form-row {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+.form-group {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    color: #fffefe;
+    font-weight: 500;
+}
+.form-group input,
+.form-group textarea {
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #bdf8dd;
+    font-size: 1em;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #fff;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: none;       /* empêche tout redimensionnement */
+    overflow: auto;     /* ajoute une barre de défilement si le texte dépasse */
+}
+
+#contact-form button {
+    margin-top: 18px;
+    border-radius: 10px;
+    background: #69abee;
+    color: #fff;
+    padding: 10px 28px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+#contact-form button:hover {
+    background: #2563eb;
+}
+
+@media (max-width: 700px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #d0d7de;
+    font-size: 1em;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #fff;
+    outline: none;
+    
+}
+form button {
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+form button:hover {
+    background: #d2fa87;
+    color: #222;
+}
+/* Footer aligné gauche/droite */
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 32px;
+    border-radius: 0 0 12px 12px;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex;
+    padding: 0 ;
+}
+.footer-left {
+    text-align: left;
+    margin: 0;
+    padding-right: 0;
+}
+.footer-right {
+    text-align: right;
+    margin: 0;
+    padding-left: 0;
+}
+

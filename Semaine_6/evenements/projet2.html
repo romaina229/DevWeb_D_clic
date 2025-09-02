@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Interactif DOM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #222;
+    }
+
+    .illustration {
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .quiz {
+      margin-top: 20px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: inline-block;
+      text-align: left;
+      max-width: 500px;
+    }
+
+    .question {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .option {
+      background: teal;
+      color: white;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .option:hover {
+      background: darkcyan;
+    }
+
+    #feedback {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #nextBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: orange;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      display: none;
+    }
+
+    #nextBtn:hover {
+      background: darkorange;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Quiz Interactif DOM</h1>
+
+  <!-- Illustration -->
+  <img src="../assets/images/imagesjs.png" alt="Deux personnes devant un écran" class="illustration">
+
+  <!-- Quiz -->
+  <div class="quiz">
+    <div id="question" class="question"></div>
+    <div id="options"></div>
+    <p id="feedback">Clique sur une réponse</p>
+    <button id="nextBtn">Question suivante</button>
+  </div>
+
+  <script>
+    // Liste des questions
+    const quizData = [
+      {
+        question: "Quelle technologie est utilisée pour donner du style à une page web ?",
+        options: ["HTML", "CSS", "PHP"],
+        correct: "CSS"
+      },
+      {
+        question: "Quelle technologie est utilisée pour la structure d’une page web ?",
+        options: ["JavaScript", "HTML", "Python"],
+        correct: "HTML"
+      },
+      {
+        question: "Quelle technologie est utilisée côté serveur ?",
+        options: ["PHP", "CSS", "HTML"],
+        correct: "PHP"
+      },
+      {
+        question: "Quelle technologie rend une page interactive ?",
+        options: ["JavaScript", "CSS", "SQL"],
+        correct: "JavaScript"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const feedbackEl = document.getElementById("feedback");
+    const nextBtn = document.getElementById("nextBtn");
+
+    // Charger une question
+    function loadQuestion() {
+      feedbackEl.textContent = "Clique sur une réponse";
+      feedbackEl.style.color = "#333";
+      nextBtn.style.display = "none";
+
+      const q = quizData[currentQuestion];
+      questionEl.textContent = q.question;
+      optionsEl.innerHTML = "";
+
+      q.options.forEach(opt => {
+        const btn = document.createElement("div");
+        btn.classList.add("option");
+        btn.textContent = opt;
+
+        btn.addEventListener("click", () => {
+          if (opt === q.correct) {
+            feedbackEl.textContent = "Bonne réponse !";
+            feedbackEl.style.color = "green";
+            score++;
+          } else {
+            feedbackEl.textContent = "Mauvaise réponse. La bonne était : " + q.correct;
+            feedbackEl.style.color = "red";
+          }
+          nextBtn.style.display = "inline-block";
+        });
+
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    // Passer à la question suivante
+    nextBtn.addEventListener("click", () => {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    });
+
+    // Afficher le score final
+    function showResult() {
+      questionEl.textContent = "Quiz terminé !";
+      optionsEl.innerHTML = "";
+      feedbackEl.textContent = `Ton score final est ${score}/${quizData.length}`;
+      feedbackEl.style.color = "blue";
+      nextBtn.style.display = "none";
+    }
+
+    // Charger la première question
+    loadQuestion();
+  </script>
+
+</body>
+</html>

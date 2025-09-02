@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Projet DOM - Lecteur Musique</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .illustration {
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .player {
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    #playBtn { background: green; color: white; }
+    #pauseBtn { background: orange; color: white; }
+    #stopBtn { background: red; color: white; }
+
+    #status {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mini-Projet DOM : Lecteur de Musique religieux qui rend hommage à DIEU</h1>
+
+  <!-- Illustration -->
+  <img src="../assets/images/groupe_music.png" alt="Deux personnes devant un écran" class="illustration">
+
+  <!-- Lecteur -->
+  <div class="player">
+    <button class="btn" id="playBtn">Play</button>
+    <button class="btn" id="pauseBtn">Pause</button>
+    <button class="btn" id="stopBtn">Stop</button>
+    <p id="status">Aucune musique en cours...</p>
+  </div>
+
+  <!-- Audio -->
+  <audio id="myAudio">
+    <source src="../assets/musique/RACHEL ANYEME - JE CONNAIS.mp3" type="audio/mpeg">
+    Ton navigateur ne supporte pas l'audio HTML5.
+  </audio>
+
+  <script>
+    const audio = document.getElementById("myAudio");
+    const status = document.getElementById("status");
+
+    document.getElementById("playBtn").addEventListener("click", () => {
+      audio.play();
+      status.textContent = "Lecture en cours...";
+      status.style.color = "green";
+    });
+
+    document.getElementById("pauseBtn").addEventListener("click", () => {
+      audio.pause();
+      status.textContent = "Musique en pause";
+      status.style.color = "orange";
+    });
+
+    document.getElementById("stopBtn").addEventListener("click", () => {
+      audio.pause();
+      audio.currentTime = 0;
+      status.textContent = "Musique arrêtée";
+      status.style.color = "red";
+    });
+  </script>
+
+</body>
+</html>
