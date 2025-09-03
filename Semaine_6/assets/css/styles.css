@@ -88,18 +88,14 @@ nav ul li a {
 nav ul li a:hover {
     color: #87f6fa;
 }
-
-
-/* Cacher le bouton hamburger en grand écran */
+/* Bouton hamburger pour mobile */
 .menu-toggle {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
+    display: none; /* caché par défaut */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10px;
 }
-
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   /* Le bouton hamburger apparaît */
