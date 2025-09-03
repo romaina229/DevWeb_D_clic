@@ -1,126 +1,77 @@
-/* Centrage du menu de navigation */
-header {
-    background: #2c3e50;
-    color: #fff;
-    padding: 20px 0 0 0;
-}
-
-/*la gestion des navigateurs sur les serveurs*/
+/*suprime toute débordement dans le header*/
 html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* supprime toute barre horizontale */
     font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
     background: #f4f6fa;
     color: #222;
-    margin: 0;
-    padding: 0;
 }
 
-/*je suis en train modifier la disposition du menu*/
-.container {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 14px 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+/* Centrage du menu de navigation */
+header {
     display: flex;
-    justify-content: space-between; /*espacement entre le titre et le menu*/
-    gap: 150px;
     align-items: center;
-    text-shadow: none;
-
+    justify-content: center; /* recentre tout le contenu */
+    background: #2c3e50;
+    padding: 0 10px; /* évite les débordements */
+    height: 110px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100; /* attention : pas de px */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    overflow-x: hidden; /* empêche tout débordement horizontal */
 }
 
-/* Aligner le h3 à gauche */
-header h1 {
-    white-space: nowrap; /*empâcher le retour à la ligne de h1*/
-    text-align: left;
-    margin: 0 0 20px;
-    padding-left: 0 0 15px 20px;
-    font-size: 2em; /*taille des texte dans la nav*/
+/* Conteneur principal */
+.container {
+    max-width: 1200px; /* largeur max adaptée aux écrans larges */
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between; /* h1 à gauche, menu à droite */
+    align-items: center;
+    gap: 20px;
+    box-shadow: none; /* enlève la double ombre */
+}
+
+/* Aligner le h1 à gauche */
+h1 {
+    white-space: nowrap; /* empêche le retour à la ligne */
+    margin: 0;
+    font-size: 1.5em;
     font-weight: 500;
     color: #fff;
     font-family: 'Montserrat', Verdana, sans-serif;
 }
 
-/* styles pour la navigation */
-nav {
-    background: #2c3e50;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-/* Centrer le menu dans le header */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-sizing: border-box; /*Calcul bien les largeurs*/
-    display: flex; /*active flexbox*/
-    gap: 14px;
-    width: fit-content;   /* le menu occupe seulement la largeur des liens */
-    justify-content: space-between; /* les liens sont centrés */ /*j'ai touché center pour voir la disposition*/
-    flex-wrap: nowrap; /*éviter de passer à la ligne*/
-    overflow-x: auto; /* si le texte est trop long defil horizontalement*/
-}
-
-/* centrer le bloc des liens dans la largeur */
-.nav-links {
-    text-align: right;
-    width: 100%;
+/* Menu principal horizontal */
+.nav-links ul {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap; /* tout reste sur une ligne */
 }
 
-nav ul li a {
-    justify-content: center;
-    align-items: self-end;
+.nav-links ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: 450px;
-    font-size: 1,9em;
-    transition: color 0.2s;
-    margin: 0 1px; /*space entre le éléments de  nav li*/
-    white-space: nowrap; /*éviter que le texte d'un aille à la ligne*/
-}
-
-nav ul li a:hover {
-    color: #87f6fa;
-}
-/* Bouton hamburger pour mobile */
-.menu-toggle {
-    display: none; /* caché par défaut */
-    flex-direction: column;
-    cursor: pointer;
-    padding: 10px;
-    margin-right: 10px;
-}
-/* ---- Responsive ---- */
-@media (max-width: 768px) {
-  /* Le bouton hamburger apparaît */
-  .menu-toggle {
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background 0.2s;
     display: block;
-  }
+    white-space: nowrap; /* empêche les liens longs de casser la ligne */
+}
 
-  /* Le menu est caché au départ */
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: #34495e;
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-    text-align: center;
-  }
-
-  /* Quand on active la classe "active" */
-  nav ul.active {
-    display: flex;
-  }
+.nav-links ul li a:hover {
+    background: #0078ff;
 }
 
 /* styles pour le contenu principal */
