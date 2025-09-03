@@ -5,6 +5,17 @@ header {
     padding: 20px 0 0 0;
 }
 
+/*la gestion des navigateurs sur les serveurs*/
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    background: #f4f6fa;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
 /*je suis en train modifier la disposition du menu*/
 .container {
     position: relative;
@@ -392,14 +403,6 @@ a.btn {
         gap: 24px;
         align-items: stretch;
     }
-}
-
-body {
-    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-    background: #f4f6fa;
-    color: #222;
-    margin: 0;
-    padding: 0;
 }
 
 /* pour les projets */
