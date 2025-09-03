@@ -26,7 +26,7 @@ header h1 {
     text-align: left;
     margin: 0 0 20px;
     padding-left: 0 0 15px 20px;
-    font-size: 2.2em; /*taille des texte dans la nav*/
+    font-size: 2em; /*taille des texte dans la nav*/
     font-weight: 500;
     color: #fff;
     font-family: 'Montserrat', Verdana, sans-serif;
@@ -43,10 +43,10 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    border: none;
+    box-sizing: border-box; /*Calcul bien les largeurs*/
     display: flex; /*active flexbox*/
-    gap: 18px;
-    padding: 10px 10px 15px;
-    margin: 2px auto;
+    gap: 14px;
     width: fit-content;   /* le menu occupe seulement la largeur des liens */
     justify-content: space-between; /* les liens sont centrés */ /*j'ai touché center pour voir la disposition*/
     flex-wrap: nowrap; /*éviter de passer à la ligne*/
@@ -68,9 +68,9 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 450px;
-    font-size: 1.1em;
+    font-size: 1,9em;
     transition: color 0.2s;
-    margin: 0 1.5px; /*space entre le éléments de  nav li*/
+    margin: 0 1px; /*space entre le éléments de  nav li*/
     white-space: nowrap; /*éviter que le texte d'un aille à la ligne*/
 }
 
@@ -78,10 +78,42 @@ nav ul li a:hover {
     color: #87f6fa;
 }
 
-@media (max-width: 600px) {
-    header {
-        padding: 12px 0 0 0;
-    }
+
+/* Cacher le bouton hamburger en grand écran */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  /* Le bouton hamburger apparaît */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Le menu est caché au départ */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #34495e;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* Quand on active la classe "active" */
+  nav ul.active {
+    display: flex;
+  }
 }
 
 /* styles pour le contenu principal */
